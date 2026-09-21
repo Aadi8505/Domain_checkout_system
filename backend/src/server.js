@@ -71,8 +71,8 @@ app.use((err, req, res, next) => {
 
 const PORT = config.port;
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`🚀 GoDaddy Domain Backend running on http://localhost:${PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 GoDaddy Domain Backend running on http://127.0.0.1:${PORT}`);
     console.log(`📦 Loaded ${Object.keys(config.supportedTlds).length} configurable TLDs`);
   });
 }

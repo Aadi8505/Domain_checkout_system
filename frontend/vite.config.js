@@ -7,8 +7,10 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true
+        // Use 127.0.0.1 instead of localhost to prevent IPv6 (::1) ECONNREFUSED issues on Windows / Node 18+
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        secure: false
       }
     }
   }
