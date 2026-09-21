@@ -1,0 +1,21 @@
+{
+  "name": "godaddy-domain-checkout-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for Domain Search and Checkout System with Express backend and React frontend",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --workspace=backend run dev",
+    "dev:frontend": "npm --workspace=frontend run dev",
+    "install:all": "npm install",
+    "test": "npm --workspace=backend run test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

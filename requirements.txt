@@ -1,0 +1,16 @@
+Im building a domain search and purchase system where user can search for domain nd buy them
+i just want to build a checkout system
+end to end purchase workflow-
+1- cutsomer search for domain 
+2- if availible customer reserves or checkout
+3- cistomer submits payemnt
+4- system reguster domain with external regustrar
+5- ownership of domain is assigned to customer
+you may assume all doamin names are availible unless bought by a user in this application
+have .in, .com an other simlar options too
+store the doamin purchase data in map or locally
+tech stack react.js for frontend and node.js and express for backend
+after completion te net stes would be to add databse so make sure peoject is open to future changes and is flexible
+make an execution plan and break the project int parts
+Make seperate folder whcihll contains md files and upon competion of each section update the md file about the work done, decisions and flow
+follow a monorepo architectire and dont hardcode any of the data
