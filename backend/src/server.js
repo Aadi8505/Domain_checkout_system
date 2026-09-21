@@ -42,6 +42,7 @@ app.get('/api/domains/config', domainController.getConfig);
 app.post('/api/checkout/reserve', checkoutController.reserve);
 app.post('/api/checkout/purchase', checkoutController.purchase);
 app.get('/api/checkout/my-domains', checkoutController.getMyDomains);
+app.get('/api/domains/my-domains', checkoutController.getMyDomains);
 app.get('/api/checkout/all', checkoutController.getAllPurchased);
 
 // Health check
