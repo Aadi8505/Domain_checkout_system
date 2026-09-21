@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // Dependency Injection Composition Root
-const domainRepository = new InMemoryDomainRepository();
+const domainRepository = new InMemoryDomainRepository(config.storageFilePath);
 const registrarClient = new RegistrarClient({ latencyMs: config.registrarLatencyMs });
 const domainService = new DomainService(domainRepository);
 const checkoutService = new CheckoutService(domainRepository, registrarClient);

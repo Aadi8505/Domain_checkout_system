@@ -10,9 +10,10 @@ The Domain Service handles parsing, sanitizing, and calculating availability for
 2. **Default Availability Principle**:
    - Per requirements, every domain name is assumed available until a customer in the system purchases it.
    - When a customer purchases `company.com`, subsequent searches for `company` report `company.com` as **TAKEN** (with masked owner info and registration timestamps) while `company.in` remains available.
-3. **Repository Contract**:
+3. **Repository Contract & Persistent Local Storage**:
    - Built on `DomainRepositoryInterface` with methods `findByName`, `findManyByNames`, `save`, `reserve`, `releaseReservation`, and `findByOwner`.
-   - Thread-safe in-memory map implementation with automatic TTL cleanup for abandoned checkout reservations.
+   - Backed by an in-memory map synchronized to a local disk storage file (`data/domains-store.json`).
+   - All purchased domains, active reservations, and ownership records are automatically flushed to disk on write and restored upon backend reload/restart, ensuring data consistency across server cycles.
 
 ## API Endpoints
 - `GET /api/domains/search?q=<keyword>`: Returns multi-TLD status, pricing, and availability.
